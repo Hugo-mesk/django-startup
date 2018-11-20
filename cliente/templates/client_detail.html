@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+  Contato | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+
+    <p>{{ object.fantasy_name }}</p>
+    <p>{{ object.social_name }}</p>
+    <p>{{ object.phone_number }}</p>
+    <p><a href="{% url "client:client_update" object.id %}">{% trans "edit" %}</a></p>
+    <p><a href="{% url "client:client_delete" object.id %}">{% trans "delete" %}</a></p>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+  Contato | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+<h1>{% trans "Cliente Delete" %}</h1>
+<form method="post">{% csrf_token %}
+    {% blocktrans %} Are you sure you want to delete "{{ object }}"?{% endblocktrans %}
+    <input type="submit" value="{% trans 'Submit' %}"/>
+</form>
+
+{% endblock %}

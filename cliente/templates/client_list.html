@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+  Contato | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+<table border="1" style="width: 100%">
+<thead>
+    <tr>
+    <th>{% trans "Fantasy Name" %}</th>
+    <th>{% trans "Social Name" %}</th>
+    <th>{% trans "Phone" %}</th>
+    <th>{% trans "Detail" %}</th>
+    <th>{% trans "Update" %}</th>
+    <th>{% trans "Delete" %}</th>
+    </tr>
+</thead>
+<tbody>
+{% for client in object_list %}
+    <tr>
+    <td>{{ client.fantasy_name }}</td>
+    <td>{{ client.social_name }}</td>
+    <td>{{ client.phone_number }}</td>
+    <td><a href="{% url "client:client_detail" client.id %}">{% trans "view" %}</a></td>
+    <td><a href="{% url "client:client_update" client.id %}">{% trans "edit" %}</a></td>
+    <td><a href="{% url "client:client_delete" client.id %}">{% trans "delete" %}</a></td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "client:client_create" %}">{% trans "New" %}</a>
+
+{% endblock %}
