@@ -125,22 +125,3 @@ Agora podemos iniciar o servidor de desenvolvimento para usar a aplicaçao:
 python manage.py migrate       # Já haviamos criado as migrações do modelo mas não execultamos elas
 python manage.py collectstatic # reune todos os arquivos staticos que em produçao seram servidos separadamente
 python manage.py runserver
-
-
-
-
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
